@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 20f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
-    public Transform vfxParent; // TODO: remover depois
+    public Transform vfxParent; // TODO: remove later
 
     void Update()
     {
