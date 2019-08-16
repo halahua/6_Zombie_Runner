@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] float healthPoints = 100f;
@@ -14,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
         if(healthPoints <= 0)
         {
-            Destroy(gameObject);
+            print("You died.");
         }
     }
 }
