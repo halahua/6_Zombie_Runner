@@ -23,6 +23,5 @@ public class EnemyAttack : MonoBehaviour
         Vou deixar dessa forma maior pra saber o que fazer quando precisar referenciar localmente.
         */
         if (target == null) { return; }
-        print("Hitting " + target.name);
     }
 }
