@@ -668,7 +668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -883,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510750083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1769672683}
@@ -1340,7 +1340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949299111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1698,7 +1698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122185004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825633692}
@@ -1728,7 +1728,7 @@ PrefabInstance:
     - target: {fileID: 955500011098999098, guid: 8856a0b2c9311c649ab580b7ed7a7fa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 955500011098999098, guid: 8856a0b2c9311c649ab580b7ed7a7fa2,
         type: 3}
@@ -1801,7 +1801,7 @@ PrefabInstance:
     - target: {fileID: 5348402585781998304, guid: 16eaf3034d64c0344bdfed994fac1d46,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.67581576
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5348402585781998304, guid: 16eaf3034d64c0344bdfed994fac1d46,
         type: 3}
@@ -1848,11 +1848,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 49121669506259094, guid: 16eaf3034d64c0344bdfed994fac1d46,
-        type: 3}
-      propertyPath: vfxParent
-      value: 
-      objectReference: {fileID: 1949299112}
     - target: {fileID: 1132623498, guid: 16eaf3034d64c0344bdfed994fac1d46, type: 3}
       propertyPath: gameOverCanvas
       value: 

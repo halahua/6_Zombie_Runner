@@ -9,22 +9,35 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 20f;
+    [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
-    public Transform vfxParent; // TODO: remove later
+    [SerializeField] Ammo ammoSlot;
+    //public Transform vfxParent; // TODO: remove later
+
+    bool canShoot = true;
+
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    public void Shoot()
+    IEnumerator Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        canShoot = false;
+        if(ammoSlot.GetCurrentAmmo() > 0)
+        {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo();
+        }
+        /* Aqui a *função* que continha o parâmetro foi chamada para poder aplicar a redução da contagem de munição.*/
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()
@@ -48,7 +61,7 @@ public class Weapon : MonoBehaviour
     private void CreateHitImpact(RaycastHit hit)
     {
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        impact.transform.parent = vfxParent.transform; // TODO: remover depois
+        //impact.transform.parent = vfxParent.transform; // TODO: remover depois
         Destroy(impact, .1f);
     }
 }
