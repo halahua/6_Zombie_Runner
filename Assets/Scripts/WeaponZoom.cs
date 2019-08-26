@@ -13,31 +13,45 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] float zoomOutMouseSensitivity = 2f;
     [SerializeField] float zoomInMouseSensitivity = .5f;
     //[SerializeField] Vector2 mouseSensitivity = new Vector2(1f, 1f);
-    
 
-    bool zommedInToggle = false;
+    bool zoomedInToggle = false;
 
+
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (zommedInToggle == false)
+            if (zoomedInToggle == false)
             {
-                //Vector2 newMouseSensitivity = new Vector2(Input.GetAxis("Mouse X") * mouseSensitivity.x,
-                //                                          Input.GetAxis("Mouse Y") * mouseSensitivity.y);
-                zommedInToggle = true;
-                FPCamera.fieldOfView = zoomedInFOV;
-                fpsController.mouseLook.XSensitivity = zoomInMouseSensitivity;
-                fpsController.mouseLook.YSensitivity = zoomInMouseSensitivity;
+                ZoomIn();
             }
             else
             {
-                zommedInToggle = false;
-                FPCamera.fieldOfView = zoomedOutFOV;
-                fpsController.mouseLook.XSensitivity = zoomOutMouseSensitivity;
-                fpsController.mouseLook.YSensitivity = zoomOutMouseSensitivity;
+                ZoomOut();
             }
         }
+    }
+
+    private void ZoomIn()
+    {
+        //Vector2 newMouseSensitivity = new Vector2(Input.GetAxis("Mouse X") * mouseSensitivity.x,
+        //                                          Input.GetAxis("Mouse Y") * mouseSensitivity.y);
+        zoomedInToggle = true;
+        FPCamera.fieldOfView = zoomedInFOV;
+        fpsController.mouseLook.XSensitivity = zoomInMouseSensitivity;
+        fpsController.mouseLook.YSensitivity = zoomInMouseSensitivity;
+    }
+
+    private void ZoomOut()
+    {
+        zoomedInToggle = false;
+        FPCamera.fieldOfView = zoomedOutFOV;
+        fpsController.mouseLook.XSensitivity = zoomOutMouseSensitivity;
+        fpsController.mouseLook.YSensitivity = zoomOutMouseSensitivity;
     }
 }

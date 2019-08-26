@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7309008314639826937}
+  - component: {fileID: 2804584073897288106}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 5348402585781998306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2804584073897288106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898681236203067172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32d3b4f34e19f047bef47b0f81cc791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!1 &5348402585782357700
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce00321227781b49980340a20e6c757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 20
+  - ammoType: 1
+    ammoAmount: 8
+  - ammoType: 2
+    ammoAmount: 10
 --- !u!1 &5348402585782357702
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +483,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 8082283402544766443}
+    - target: {fileID: 247161566868621017, guid: a24239b8a38458a40b746b72233d993c,
+        type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5852203216297248831, guid: a24239b8a38458a40b746b72233d993c,
         type: 3}
       propertyPath: FPCamera
@@ -571,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 247161566868621017, guid: 2411de30c56817a45ab696311be85575,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0.2
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 247161566868621017, guid: 2411de30c56817a45ab696311be85575,
         type: 3}
@@ -678,6 +703,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 8082283402544766443}
+    - target: {fileID: 247161566868621017, guid: bfee20551da6e2e44b131eb379563397,
+        type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfee20551da6e2e44b131eb379563397, type: 3}
 --- !u!4 &7992370983096440237 stripped
