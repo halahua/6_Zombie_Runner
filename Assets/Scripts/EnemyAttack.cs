@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void AttackHitEvent() 
     {
+        print("Attacking player...");
         target.GetComponent<PlayerHealth>().TakeDamage(damage); // assim para referenciar outro script. Variável, GetComponent e depois a função
         /* 
         Poderia ser só assim: 

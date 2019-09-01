@@ -7,12 +7,13 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
 
-
     [SerializeField] Transform target;
     [Range(1f, 50f)][SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
 
     NavMeshAgent navMeshAgent;
+    EnemyHealth enemyHealth;
+    new Collider collider;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
@@ -20,10 +21,19 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyHealth = GetComponent<EnemyHealth>();
+        collider = GetComponent<Collider>();
     }
 
     void Update()
     {
+        if (enemyHealth.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+            collider.enabled = false;
+        }
+
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
         if (isProvoked)
