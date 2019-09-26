@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 1132623499}
   - component: {fileID: 1132623498}
   - component: {fileID: 8082283402544766443}
+  - component: {fileID: 8887009447368072374}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -228,6 +229,20 @@ MonoBehaviour:
     ammoAmount: 8
   - ammoType: 2
     ammoAmount: 10
+--- !u!114 &8887009447368072374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348402585782357700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe9913448082cc448148f1747e5f484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactCanvas: {fileID: 0}
+  impactTime: 0.3
 --- !u!1 &5348402585782357702
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,11 +687,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334837701349267898, guid: aec4a47fcae4b164486e48627d37a7f3,
-        type: 3}
-      propertyPath: lightDecay
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec4a47fcae4b164486e48627d37a7f3, type: 3}

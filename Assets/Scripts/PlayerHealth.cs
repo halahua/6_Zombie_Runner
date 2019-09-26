@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         healthPoints -= damage;
+        // GetComponent<DisplayDamage>().ShowDamageImpact(); //MOVED TO: EnemyAttack.cs
 
         if(healthPoints <= 0)
         {
